@@ -51,11 +51,6 @@
   width: 9rem;
   display: block;
   margin: 0 auto;
-
-}
-
-.ds-hero .nav-buttons {
-
 }
 
 .ds-hero .button {
@@ -63,6 +58,11 @@
   border: 1px solid white;
   color: white;
   border-radius: 5px;
+}
+
+.ds-hero .button:hover, .button:focus {
+  border: 1px solid red;
+  color: #fefefe;
 }
 
 @media only screen and (min-width: 40.063em) {

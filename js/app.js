@@ -1,5 +1,6 @@
 $(document).foundation()
 
+// cookie nonsense
 window.addEventListener("load", function(){
   window.cookieconsent.initialise({
     "palette": {
@@ -18,3 +19,8 @@ window.addEventListener("load", function(){
     }
   })
 });
+
+//
+UserManagement.init();
+
+UserManagement.login();
