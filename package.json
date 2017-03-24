@@ -1,0 +1,18 @@
+{
+  "name": "web-drumscore-scot",
+  "version": "1.0.0",
+  "description": "Demonstrating how to deploy a Single Page Application with Serverless",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alanwhite/dseweb"
+  },
+  "author": "Alan White",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/alanwhite/dseweb/issues"
+   },
+   "homepage": "https://github.com/alanwhite/dseweb#readme"
+}
