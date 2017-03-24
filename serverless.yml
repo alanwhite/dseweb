@@ -1,4 +1,4 @@
-service: single-page-app-via-cloudfront7
+service: web-drumscore-scot
 
 frameworkVersion: ">=1.2.0 <2.0.0"
 
@@ -6,11 +6,13 @@ plugins:
   - serverless-single-page-app-plugin
 
 custom:
-  s3Bucket: yourBucketName123
+  s3Bucket: web.drumscore.scot
 
 provider:
   name: aws
   runtime: nodejs4.3
+  stage: dev
+  region: eu-west-1
 
 resources:
   Resources:
@@ -96,4 +98,3 @@ resources:
     WebAppCloudFrontDistributionOutput:
       Value:
         'Fn::GetAtt': [ WebAppCloudFrontDistribution, DomainName ]
-
