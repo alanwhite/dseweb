@@ -26,11 +26,28 @@ UserManagement.init();
 // UserManagement.login();
 
 
-
+// scroll to download view
 document.getElementById("btn-download").onclick = function(){
   console.log("clicked download");
   var anchor = document.querySelector( '#download' );
   var toggle = document.querySelector('btn-download');
+  var options = { speed: 1000, easing: 'easeInOutCubic' };
+  smoothScroll.animateScroll( anchor, toggle, options );
+  window.history.pushState({}, undefined, '#download'  );
+};
+
+document.getElementById("btn-more").onclick = function(){
+  console.log("clicked more-info");
+  var anchor = document.querySelector( '#more-info' );
+  var toggle = document.querySelector('btn-more');
+  var options = { speed: 1000, easing: 'easeInOutCubic' };
+  smoothScroll.animateScroll( anchor, toggle, options );
+};
+
+document.getElementById("btn-licensing").onclick = function(){
+  console.log("clicked licensing");
+  var anchor = document.querySelector( '#licensing' );
+  var toggle = document.querySelector('btn-licensing');
   var options = { speed: 1000, easing: 'easeInOutCubic' };
   smoothScroll.animateScroll( anchor, toggle, options );
 };
