@@ -79,3 +79,8 @@
         text-align: right;
     }
 }
+
+.download {
+   background-size: cover;
+   height: 100vh;
+}

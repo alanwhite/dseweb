@@ -23,4 +23,14 @@ window.addEventListener("load", function(){
 //
 UserManagement.init();
 
-UserManagement.login();
+// UserManagement.login();
+
+
+
+document.getElementById("btn-download").onclick = function(){
+  console.log("clicked download");
+  var anchor = document.querySelector( '#download' );
+  var toggle = document.querySelector('btn-download');
+  var options = { speed: 1000, easing: 'easeInOutCubic' };
+  smoothScroll.animateScroll( anchor, toggle, options );
+};
