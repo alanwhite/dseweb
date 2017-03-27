@@ -81,16 +81,30 @@
 }
 
 .download {
+  background-color: lightgrey;
+}
+
+.ds-windows {
+   background: url("../images/mswindows.png") no-repeat center center;
    background-size: cover;
-   height: 100vh;
+   height: 9rem;
+   width: 9rem;
+   display: block;
+   margin: 0 auto;
+}
+
+.ds-macos {
+   background: url("../images/macos.png") no-repeat center center;
+   height: 9rem;
+   width: 9rem;
+   display: block;
+   margin: 0 auto;
 }
 
 .more-info {
-   background-size: cover;
-   height: 100vh;
+   background-color: white;
 }
 
 .licensing {
-   background-size: cover;
-   height: 100vh;
+   background-color: lightgrey;
 }

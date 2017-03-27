@@ -20,34 +20,29 @@ window.addEventListener("load", function(){
   })
 });
 
-//
+// Set up authentication
 UserManagement.init();
 
 // UserManagement.login();
 
-
-// scroll to download view
-document.getElementById("btn-download").onclick = function(){
-  console.log("clicked download");
-  var anchor = document.querySelector( '#download' );
-  var toggle = document.querySelector('btn-download');
+// set up animated scrolling
+var dsScrollTo = function scrollT(target, btn) {
+  // console.log("in scrollTo "+target+" "+btn);
+  var toggle = document.querySelector( btn );
+  var anchor = document.querySelector( target );
   var options = { speed: 1000, easing: 'easeInOutCubic' };
   smoothScroll.animateScroll( anchor, toggle, options );
-  window.history.pushState({}, undefined, '#download'  );
-};
+  window.history.pushState({}, undefined, target  );
+}
+
+document.getElementById("btn-download").onclick = function() {
+  dsScrollTo('#download','btn-download');
+}
 
 document.getElementById("btn-more").onclick = function(){
-  console.log("clicked more-info");
-  var anchor = document.querySelector( '#more-info' );
-  var toggle = document.querySelector('btn-more');
-  var options = { speed: 1000, easing: 'easeInOutCubic' };
-  smoothScroll.animateScroll( anchor, toggle, options );
+  dsScrollTo('#more-info','btn-more');
 };
 
 document.getElementById("btn-licensing").onclick = function(){
-  console.log("clicked licensing");
-  var anchor = document.querySelector( '#licensing' );
-  var toggle = document.querySelector('btn-licensing');
-  var options = { speed: 1000, easing: 'easeInOutCubic' };
-  smoothScroll.animateScroll( anchor, toggle, options );
+  dsScrollTo('#licensing','btn-licensing');
 };
