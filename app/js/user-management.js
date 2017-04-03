@@ -1,7 +1,7 @@
 // Manages all authentication actions for users
 // Fill in with your values
-const AUTH0_CLIENT_ID = 'k3CauTTm89JUxldE3Md43qDwDtSZksH5';
-const AUTH0_DOMAIN = 'drumscore.eu.auth0.com';
+const AUTH0_CLIENT_ID = 'ZavYd2LZRm8iF1TH3iE4Hu76XYeh7OH2';
+const AUTH0_DOMAIN = 'drumscore-dev.eu.auth0.com';
 const AUTH0_CALLBACK_URL = window.location.href; // eslint-disable-line
 const PUBLIC_ENDPOINT = 'https://5kaml809og.execute-api.eu-west-1.amazonaws.com/dev/nplay/hello';
 const PRIVATE_ENDPOINT = 'https://5kaml809og.execute-api.eu-west-1.amazonaws.com/dev/nplay/private';
@@ -11,8 +11,12 @@ var lock;
 
 var UserManagement = {
 
+  hook: '',
 
-  init: function() {
+  init: function(userHook) {
+
+    hook = userHook;
+
     // initialize auth0 lock
     var options = {
       auth: {
@@ -37,6 +41,7 @@ var UserManagement = {
         localStorage.setItem('accessToken', authResult.accessToken);
         localStorage.setItem('idToken', authResult.idToken);
         localStorage.setItem('profile', JSON.stringify(profile));
+        hook.loginSuccess();
       });
     });
   },
@@ -49,6 +54,7 @@ var UserManagement = {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('idToken');
     localStorage.removeItem('profile');
+    hook.logoutSuccess();
   }
 
 };
