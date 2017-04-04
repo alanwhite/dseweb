@@ -195,21 +195,29 @@
               </thead>
               <tbody>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td>
-                    <div class="row">
-                      <div class="small-1 columns">
-                        <button class="button hollow">Buy</button>
-                      </div>
-                      <div class="small-11 columns">
-                        <button class="button hollow alert" id="btn-license-signout">Sign Out</button>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tfoot>
-          </table>
+            </table>
+
+            <div class="media-object stack-for-small">
+              <div class="media-object-section">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_xclick">
+                  <input type="hidden" name="custom" value="userid">
+                  <input type="hidden" name="item_name" value="Drum Score Editor Studio License">
+                  <input type="hidden" name="currency_code" value="GBP">
+                  <input type="hidden" name="amount" value="25.00">
+                  <input type="hidden" name="quantity" value="1">
+                  <input type="hidden" name="business" value="alan@whiteware.org">
+                  <input type="hidden" name="notify_url" value="https://api.drumscore.scot/payments/paypal">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif"
+                    border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                  <!-- <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1"> -->
+                </form>
+              </div>
+              <div class="media-object-section">
+                <button class="button hollow alert" id="btn-license-signout">Sign Out</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
