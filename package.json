@@ -9,10 +9,25 @@
   "author": "Alan White",
   "license": "MIT",
   "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin"
   },
   "bugs": {
     "url": "https://github.com/alanwhite/dseweb/issues"
-   },
-   "homepage": "https://github.com/alanwhite/dseweb#readme"
+  },
+  "homepage": "https://github.com/alanwhite/dseweb#readme"
 }

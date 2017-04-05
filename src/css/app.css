@@ -1,0 +1,110 @@
+.ds-hero {
+   background: url("../images/BalmoralTilt.jpg") no-repeat center center;
+   background-size: cover;
+   height: 100vh;
+}
+
+.ds-hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #0888ff, #030aff);
+  opacity: 0.9;
+}
+
+.ds-hero .intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ds-hero h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.ds-hero p {
+  color: #fff;
+  line-height: 1.75em;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ds-hero .small-centered, .small-centered:last-child:not(:first-child) {
+    float: left;
+    clear: none;
+}
+
+.ds-hero .logo-img {
+  background: url("../images/logo.png") no-repeat center center;
+  background-size: cover;
+  height: 9rem;
+  width: 9rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.ds-hero .button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.ds-hero .button:hover, .button:focus {
+  border: 1px solid red;
+  color: #fefefe;
+}
+
+@media only screen and (min-width: 40.063em) {
+    .ds-hero .logo-img {
+        height: 18rem;
+        width: 18rem;
+    }
+    .ds-hero h1 {
+        padding-top: 4.5rem;
+        text-align: right;
+        font-size: 2.5rem;
+    }
+    .ds-hero p {
+        text-align: right;
+    }
+}
+
+.download {
+  background-color: lightgrey;
+}
+
+.ds-windows {
+   background: url("../images/mswindows.png") no-repeat center center;
+   background-size: cover;
+   height: 9rem;
+   width: 9rem;
+   display: block;
+   margin: 0 auto;
+}
+
+.ds-macos {
+   background: url("../images/macos.png") no-repeat center center;
+   height: 9rem;
+   width: 9rem;
+   display: block;
+   margin: 0 auto;
+}
+
+.more-info {
+   background-color: lightblue;
+}
+
+.licensing {
+   background-color: lightgrey;
+}
