@@ -11,6 +11,10 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     del = require('del'),
     order = require('gulp-order'),
+    filter = require('gulp-filter');
+    replace = require('gulp-replace');
+    print = require('gulp-print');
+    util = require('gulp-util');
     htmlreplace = require('gulp-html-replace');
 
 var input = 'src';
@@ -34,6 +38,8 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
+  const environmentFilter = filter('**/environment.js', {restore: true});
+
   return gulp.src('src/js/**/*.js')
     // .pipe(jshint('.jshintrc'))
     .pipe(jshint())
@@ -41,11 +47,16 @@ gulp.task('scripts', function() {
     .pipe(order([
       "vendor/jquery.js",
       "vendor/*.js",
+      "environment.js",
       "user-management.js",
       "license-mgmt.js",
       "app.js",
-      "*.js"
+      "*.js" // catches any others added, probably breaks stuff if you do
     ]))
+    .pipe(environmentFilter)
+    .pipe(print())
+    .pipe(replace('_STAGE = dev', '_STAGE = '+(util.env.stage ? util.env.stage : 'dev')))
+    .pipe(environmentFilter.restore)
     .pipe(concat('main.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(rename({suffix: '.min'}))

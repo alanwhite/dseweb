@@ -1,11 +1,8 @@
 // Manages all authentication actions for users
-// Fill in with your values
+
 const AUTH0_CLIENT_ID = 'ZavYd2LZRm8iF1TH3iE4Hu76XYeh7OH2';
 const AUTH0_DOMAIN = 'drumscore-dev.eu.auth0.com';
-const AUTH0_CALLBACK_URL = window.location.href; // eslint-disable-line
-const PUBLIC_ENDPOINT = 'https://5kaml809og.execute-api.eu-west-1.amazonaws.com/dev/nplay/hello';
-const PRIVATE_ENDPOINT = 'https://5kaml809og.execute-api.eu-west-1.amazonaws.com/dev/nplay/private';
-
+const AUTH0_CALLBACK_URL = window.location.href;
 
 var lock;
 
