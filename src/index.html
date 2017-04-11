@@ -203,16 +203,16 @@
 
             <div class="media-object stack-for-small">
               <div class="media-object-section">
-                <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <form id="paypal-url" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                   <input type="hidden" name="cmd" value="_xclick">
-                  <input type="hidden" name="custom" value="userid">
+                  <input type="hidden" id="paypal-user"name="custom" value="tbd">
                   <input type="hidden" name="item_name" value="Drum Score Editor Studio License">
                   <input type="hidden" name="currency_code" value="GBP">
                   <input type="hidden" name="amount" value="25.00">
                   <input type="hidden" name="quantity" value="1">
                   <input type="hidden" name="business" value="alan-facilitator@whiteware.org">
                   <!-- <input type="hidden" name="notify_url" value="https://api.drumscore.scot/payments/paypal"> -->
-                  <input type="hidden" name="notify_url"
+                  <input type="hidden" id="paypal-notify" name="notify_url"
                     value="https://sja5mclnha.execute-api.eu-west-1.amazonaws.com/dev/payments/paypal">
                   <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif"
                     border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
@@ -331,6 +331,7 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/vendor/smooth-scroll.js"></script>
+    <script src="js/environment.js"></script>
     <script src="js/user-management.js"></script>
     <script src="js/license-mgmt.js"></script>
     <script src="js/app.js"></script>

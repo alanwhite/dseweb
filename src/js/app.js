@@ -20,6 +20,10 @@ window.addEventListener("load", function(){
   })
 });
 
+// set up paypal url depending on stage
+document.getElementById("paypal-url").action = PAYPAL_BUY_NOW_URL_STAGE;
+document.getElementById("paypal-notify").value = PAYPAL_NOTIFY_URL_STAGE;
+
 // set up animated scrolling
 var dsScrollTo = function scrollT(target, btn) {
   // console.log("in scrollTo "+target+" "+btn);

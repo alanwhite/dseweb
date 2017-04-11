@@ -9,6 +9,11 @@ var LicenseMgmt = {
       var cell1 = row.insertCell(0);
       cell1.innerHTML = licenses[i].token;
     }
+    // set the user in the buy now button
+    var profile = JSON.parse(localStorage.getItem('profile'));
+    var userID = profile.sub;
+    console.log('extraced user id '+userID);
+    document.getElementById("paypal-user").value = userID;
   },
 
   clearLicenseTable: function() {
@@ -20,14 +25,20 @@ var LicenseMgmt = {
     }
   },
 
-  licGet: function() {
+  licGet: function(userID) {
     console.log("set up the ajax call");
     // populate the correct div with license detail
-    var profile = JSON.parse(localStorage.getItem('profile'));
-    var token = profile.sub.substring(7);
+    // var profile = JSON.parse(localStorage.getItem('profile'));
+    // var token = profile.sub.substring(7);
+
+    var profile = localStorage.getItem('profile');
+    console.log(profile);
+    var account = JSON.parse(profile).sub;
+
+    console.log('account '+account);
 
     $.ajax({
-      url: 'https://sja5mclnha.execute-api.eu-west-1.amazonaws.com/dev/licenses/58dc1f657e89a40270feef49',
+      url: DSE_GET_LICENSE_URL_STAGE+account,
 
       beforeSend: function(request) {
         request.setRequestHeader("Authorization", "Bearer "+localStorage.getItem('idToken'));
