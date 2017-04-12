@@ -25,9 +25,9 @@ Various other standard files and folders have their usual meaning, e.g. node_mod
 
 ## Functionality
 
-Authentication - handled by using the Auth0.com services
-Payments - handled via PayPal webascr button & back end API
-Licenses - storage and encryption handled via back end API
+* Authentication - handled by using the Auth0.com services
+* Payments - handled via PayPal webscr button & dseapi, our back end API
+* Licenses - storage and encryption handled via dseapi, our back end API
 
 The site provides static information & links to download & install Drum Score Editor for macOS and Windows. Further information on the functional difference between the free version and the licensed version is provided.
 
