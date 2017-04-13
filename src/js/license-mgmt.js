@@ -5,9 +5,12 @@ var LicenseMgmt = {
     var licBody = licenseTable.getElementsByTagName('tbody')[0];
     for (var i in licenses ) {
       console.log(licenses[i].token);
+      var tokenDetail = JSON.parse(licenses[i].token);
       var row = licBody.insertRow(i);
-      var cell1 = row.insertCell(0);
-      cell1.innerHTML = licenses[i].token;
+      var cell0 = row.insertCell(0);
+      cell0.innerHTML = tokenDetail.txn;
+      var cell1 = row.insertCell(1);
+      cell1.innerHTML = tokenDetail.token;
     }
   },
 
