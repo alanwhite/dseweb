@@ -9,11 +9,6 @@ var LicenseMgmt = {
       var cell1 = row.insertCell(0);
       cell1.innerHTML = licenses[i].token;
     }
-    // set the user in the buy now button
-    var profile = JSON.parse(localStorage.getItem('profile'));
-    var userID = profile.sub;
-    console.log('extraced user id '+userID);
-    document.getElementById("paypal-user").value = userID;
   },
 
   clearLicenseTable: function() {
@@ -25,17 +20,10 @@ var LicenseMgmt = {
     }
   },
 
-  licGet: function(userID) {
-    console.log("set up the ajax call");
-    // populate the correct div with license detail
-    // var profile = JSON.parse(localStorage.getItem('profile'));
-    // var token = profile.sub.substring(7);
+  licGet: function() {
 
     var profile = localStorage.getItem('profile');
-    console.log(profile);
     var account = JSON.parse(profile).sub;
-
-    console.log('account '+account);
 
     $.ajax({
       url: DSE_GET_LICENSE_URL_STAGE+account,
@@ -51,7 +39,7 @@ var LicenseMgmt = {
           if ( msg.apiVersion == 1 ) {
             var licThanks = document.getElementById("license-thanks");
             var numLicenses = msg.licenses.length;
-            if ( numLicenses == 0 ) {
+            if ( numLicenses === 0 ) {
               licThanks.textContent = "Please consider financially supporting Drum Score Editor "+
                 "by purchasing a license";
             } else {
@@ -69,7 +57,5 @@ var LicenseMgmt = {
 
     });
   }
-
-
 
 };
