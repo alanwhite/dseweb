@@ -18,6 +18,8 @@ window.addEventListener("load", function(){
   });
 });
 
+var clipboard = new Clipboard('#clippy');
+
 // set up paypal url depending on stage
 document.getElementById("paypal-url").action = PAYPAL_BUY_NOW_URL_STAGE;
 document.getElementById("paypal-notify").value = PAYPAL_NOTIFY_URL_STAGE;

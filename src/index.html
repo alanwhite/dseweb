@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://cdn.auth0.com/js/lock/10.12.3/lock.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Score Editor</title>
 
@@ -194,13 +195,15 @@
             <table id="license-table">
               <thead>
                 <tr>
-                  <th>Transaction Ref</th>
-                  <th width=50>License Key</th>
+                  <th width=50>Transaction Ref</th>
+                  <th>License Key</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="license-rows">
               </tbody>
             </table>
+
+
 
             <div class="media-object stack-for-small">
               <div class="media-object-section">

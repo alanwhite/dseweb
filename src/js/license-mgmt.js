@@ -3,15 +3,21 @@ var LicenseMgmt = {
   populateLicenseTable: function(licenses) {
     var licenseTable = document.getElementById("license-table");
     var licBody = licenseTable.getElementsByTagName('tbody')[0];
+    // var content = "";
     for (var i in licenses ) {
       console.log(licenses[i].token);
       var tokenDetail = JSON.parse(licenses[i].token);
       var row = licBody.insertRow(i);
+      // content = content + "<tr>";
       var cell0 = row.insertCell(0);
+      // content = content + "<td>" + tokenDetail.txn + "</td>";
       cell0.innerHTML = tokenDetail.txn;
       var cell1 = row.insertCell(1);
-      cell1.innerHTML = tokenDetail.token;
+      // content = content + "<td>" + "tokenDetail.token and other strems of words to test folding / wrapping whatever" + "</td></tr>";
+      cell1.innerHTML = '<button class="button" id="clippy" data-clipboard-text="'+tokenDetail.token+'">Copy to clipboard</button>';
     }
+    // console.log(content);
+    // $("#license-rows").html(content).foundation();
   },
 
   clearLicenseTable: function() {
