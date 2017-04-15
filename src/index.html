@@ -5,6 +5,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://cdn.auth0.com/js/lock/10.12.3/lock.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Score Editor</title>
 
@@ -13,7 +15,7 @@
     <link rel="stylesheet" href="css/app.css">
     <!-- endBuild -->
 
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
   </head>
   <body>
     <div class="ds-hero">
@@ -214,7 +216,7 @@
                   <input type="hidden" name="currency_code" value="GBP">
                   <input type="hidden" name="amount" value="25.00">
                   <input type="hidden" name="quantity" value="1">
-                  <input type="hidden" name="business" value="alan-facilitator@whiteware.org">
+                  <input type="hidden" id="paypal-account" name="business" value="alan-facilitator@whiteware.org">
                   <!-- <input type="hidden" name="notify_url" value="https://api.drumscore.scot/payments/paypal"> -->
                   <input type="hidden" id="paypal-notify" name="notify_url"
                     value="https://sja5mclnha.execute-api.eu-west-1.amazonaws.com/dev/payments/paypal">
@@ -330,6 +332,24 @@
 
     </div>
 
+    <div class="social-links">
+      <div class="row">
+        <div class="small-6 medium-3 columns text-center mobile-stack">
+          <a href="https://www.facebook.com/DrumScoreEditor"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+        </div>
+        <div class="small-6 medium-3 columns text-center mobile-stack">
+          <a href="https://www.youtube.com/channel/UC5b2zumYsIaI09Ru61ZXS7g"><i class="fa fa-youtube" aria-hidden="true"></i>YouTube</a>
+        </div>
+        <div class="small-6 medium-3 columns text-center mobile-stack">
+          <a href="mailto:alan@whiteware.org"><i class="fa fa-envelope" aria-hidden="true"></i>Email</a>
+        </div>
+        <div class="small-6 medium-3 columns text-center mobile-stack">
+          <a href="https://twitter.com/DrumScoreEditor"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+        </div>
+      </div>
+    </div>
+
+
     <!-- build:js -->
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
@@ -340,7 +360,7 @@
     <script src="js/license-mgmt.js"></script>
     <script src="js/app.js"></script>
     <!-- endBuild -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
   </body>
 </html>

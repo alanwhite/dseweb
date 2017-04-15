@@ -35,7 +35,7 @@ var LicenseMgmt = {
     var account = JSON.parse(profile).sub;
 
     $.ajax({
-      url: DSE_GET_LICENSE_URL_STAGE+account,
+      url: DSE_GET_LICENSE_URL_STAGE+encodeURI(account),
 
       beforeSend: function(request) {
         request.setRequestHeader("Authorization", "Bearer "+localStorage.getItem('idToken'));
