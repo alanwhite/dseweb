@@ -80,8 +80,22 @@
     }
 }
 
+h2 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
 .download {
-  background-color: lightgrey;
+  /*background-color: lightgrey;*/
 }
 
 .ds-windows {
@@ -101,12 +115,15 @@
    margin: 0 auto;
 }
 
+
+
+
 .more-info {
    background-color: lightblue;
 }
 
 .licensing {
-   background-color: lightgrey;
+   background-color: #efefef;
 }
 
 
