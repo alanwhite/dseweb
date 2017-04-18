@@ -113,8 +113,31 @@
 .social-links {
   /*background: #1d92cf;*/
   background: rgb(10, 115, 186);
-  padding: 2rem 0 1rem;
+
+  /*padding: 2rem 0 1rem;*/
 }
+
+.social-links .facebook {
+  /*background: #1d92cf;*/
+  background: 	#3b5998;
+  padding-top: 1rem;
+}
+
+.social-links .twitter {
+  background: 	#1da1f2;
+  padding-top: 1rem;
+}
+
+.social-links .youtube {
+  background: 	#cd201f;
+  padding-top: 1rem;
+}
+
+.social-links .email {
+  background: 	#999999;
+  padding-top: 1rem;
+}
+
 
 .social-links a {
   color: white;
@@ -128,21 +151,21 @@
 }
 
 @media screen and (max-width: 39.9375em) {
-  .social-links {
+  /*.social-links {
     padding: 2rem 0;
-  }
+  }*/
   .social-links i.fa {
     font-size: 2rem;
     display: block;
     padding-right: 0;
-    padding-bottom: 0.5rem;
+    /*padding-bottom: 0.5rem;*/
   }
   .social-links a {
     font-weight: bold;
   }
-  .social-links .columns {
+  /*.social-links .columns {
     margin: 1rem 0;
-  }
+  }*/
   .social-links .mobile-stack {
     display: -webkit-flex;
     display: -ms-flexbox;

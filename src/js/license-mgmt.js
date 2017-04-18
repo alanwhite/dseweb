@@ -14,7 +14,14 @@ var LicenseMgmt = {
       cell0.innerHTML = tokenDetail.txn;
       var cell1 = row.insertCell(1);
       // content = content + "<td>" + "tokenDetail.token and other strems of words to test folding / wrapping whatever" + "</td></tr>";
-      cell1.innerHTML = '<button class="button" id="clippy" data-clipboard-text="'+tokenDetail.token+'">Copy to clipboard</button>';
+      cell1.innerHTML = //'<div class="input-group">'+
+                        //ß  '<input class="input-group-field" value="'+tokenDetail.token+'" readonly="readonly">'+
+
+                            '<button class="button hollow" id="clippy" data-clipboard-text="'+
+                              tokenDetail.token+
+                              '"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy to clipboard'+
+                              '</button>';
+                        // '</div>';
     }
     // console.log(content);
     // $("#license-rows").html(content).foundation();
