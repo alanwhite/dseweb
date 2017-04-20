@@ -40,13 +40,6 @@ var btnAuth = document.getElementById("btn-auth");
 var divLicenseLogin = document.getElementById("license-login");
 var divLicenseLogout = document.getElementById("license-logout");
 
-const jwtToken = localStorage.getItem('idToken');
-if (jwtToken) {
-  setupUser();
-} else {
-  divLicenseLogout.style.display = 'none';
-}
-
 // DRY setup app for logged in user
 function setupUser() {
   btnAuth.textContent="Sign Out";
@@ -80,6 +73,24 @@ var authHook = {
 };
 
 UserManagement.init(authHook);
+
+// set up Sign In / Out button depending on login state
+const jwtToken = localStorage.getItem('idToken');
+if (jwtToken) {
+  // check if token expired
+  var jwtParts = jwtToken.split('.');
+  var payload = JSON.parse(atob(jwtParts[1]));
+
+  if (payload.exp && (payload.exp > Date.now() / 1000)) {
+    // console.log('existing token not expired');
+    setupUser();
+  } else {
+    console.log("login expired: new login required");
+    UserManagement.logout();
+  }
+} else {
+  divLicenseLogout.style.display = 'none';
+}
 
 btnAuth.onclick = function() {
   if ( btnAuth.textContent == "Sign Out") {

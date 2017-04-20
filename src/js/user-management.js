@@ -1,7 +1,5 @@
 // Manages all authentication actions for users
 
-const AUTH0_CLIENT_ID = 'ZavYd2LZRm8iF1TH3iE4Hu76XYeh7OH2';
-const AUTH0_DOMAIN = 'drumscore-dev.eu.auth0.com';
 const AUTH0_CALLBACK_URL = window.location.href;
 
 var lock;
@@ -22,7 +20,7 @@ var UserManagement = {
       }
     };
 
-    lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, options);
+    lock = new Auth0Lock(AUTH0_CLIENT_ID_STAGE, AUTH0_DOMAIN_STAGE, options);
 
     // Listening for the authenticated event
     lock.on("authenticated", function(authResult) {
