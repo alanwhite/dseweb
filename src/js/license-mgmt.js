@@ -59,6 +59,7 @@ var LicenseMgmt = {
               licThanks.textContent = "Please consider financially supporting Drum Score Editor "+
                 "by purchasing a license";
             } else {
+              licThanks.textContent = "Thank you for financially supporting Drum Score Editor ";
               LicenseMgmt.populateLicenseTable(msg.licenses);
             }
           } else {
