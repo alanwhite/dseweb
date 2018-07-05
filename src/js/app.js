@@ -16,6 +16,8 @@ window.addEventListener("load", function(){
       "message": "The crazy EU cookie law says I have to show you this. This website uses cookies - if you don't like that then please leave the site."
     }
   });
+  UserManagement.init(authHook);
+  UserManagement.handleAuthentication();
 });
 
 var clipboard = new Clipboard('#clippy');
@@ -24,6 +26,10 @@ var clipboard = new Clipboard('#clippy');
 document.getElementById("paypal-url").action = PAYPAL_BUY_NOW_URL_STAGE;
 document.getElementById("paypal-notify").value = PAYPAL_NOTIFY_URL_STAGE;
 document.getElementById("paypal-account").value = PAYPAL_ACCOUNT_STAGE;
+
+var returnURL = window.location.origin + "/#licensing";
+document.getElementById("paypal-return-url").value = returnURL;
+console.log(returnURL);
 
 // set up animated scrolling
 var dsScrollTo = function scrollT(target, btn) {
@@ -71,8 +77,6 @@ var authHook = {
     LicenseMgmt.clearLicenseTable();
   }
 };
-
-UserManagement.init(authHook);
 
 // set up Sign In / Out button depending on login state
 const jwtToken = localStorage.getItem('idToken');

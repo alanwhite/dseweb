@@ -3,28 +3,18 @@ var LicenseMgmt = {
   populateLicenseTable: function(licenses) {
     var licenseTable = document.getElementById("license-table");
     var licBody = licenseTable.getElementsByTagName('tbody')[0];
-    // var content = "";
     for (var i in licenses ) {
       console.log(licenses[i].token);
       var tokenDetail = JSON.parse(licenses[i].token);
       var row = licBody.insertRow(i);
-      // content = content + "<tr>";
       var cell0 = row.insertCell(0);
-      // content = content + "<td>" + tokenDetail.txn + "</td>";
       cell0.innerHTML = tokenDetail.txn;
       var cell1 = row.insertCell(1);
-      // content = content + "<td>" + "tokenDetail.token and other strems of words to test folding / wrapping whatever" + "</td></tr>";
-      cell1.innerHTML = //'<div class="input-group">'+
-                        //ß  '<input class="input-group-field" value="'+tokenDetail.token+'" readonly="readonly">'+
-
-                            '<button class="button hollow" id="clippy" data-clipboard-text="'+
+      cell1.innerHTML = '<button class="button hollow" id="clippy" data-clipboard-text="'+
                               tokenDetail.token+
                               '"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy to clipboard'+
                               '</button>';
-                        // '</div>';
     }
-    // console.log(content);
-    // $("#license-rows").html(content).foundation();
   },
 
   clearLicenseTable: function() {

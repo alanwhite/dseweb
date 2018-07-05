@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <script src="https://cdn.auth0.com/js/lock/10.12.3/lock.min.js"></script>
+    <!-- <script src="https://cdn.auth0.com/js/lock/11.7.2/lock.min.js"></script> --!>
+    <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
@@ -77,7 +78,7 @@
               <br>
             </div>
             <p>
-              <a class="button hollow" href="https://s3-eu-west-1.amazonaws.com/drumscoreportal-resources/DrumScoreEditor-2.6.3.exe">
+              <a class="button hollow" href="https://s3-eu-west-1.amazonaws.com/drumscoreportal-resources/DrumScoreEditor-2.6.5.exe">
               Windows Download</a>
             </p>
           <!-- </div> -->
@@ -98,7 +99,7 @@
               </ul>
           </div>
           <p>
-            <a class="button hollow" href="https://s3-eu-west-1.amazonaws.com/drumscoreportal-resources/DrumScoreEditor-2.6.3.dmg">
+            <a class="button hollow" href="https://s3-eu-west-1.amazonaws.com/drumscoreportal-resources/DrumScoreEditor-2.6.5.dmg">
               macOS Download</a>
           </p>
           <!-- </div> -->
@@ -234,6 +235,7 @@
                     value="https://sja5mclnha.execute-api.eu-west-1.amazonaws.com/dev/payments/paypal">
                   <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif"
                     border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                  <INPUT TYPE="hidden" id="paypal-return-url" name="return" value="dummy">
                   <!-- <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1"> -->
                 </form>
               </div>
