@@ -1,7 +1,10 @@
 $(document).foundation();
 
+
+
 // cookie nonsense
 window.addEventListener("load", function(){
+
   window.cookieconsent.initialise({
     "palette": {
       "popup": { "background": "#252e39" },
@@ -16,7 +19,7 @@ window.addEventListener("load", function(){
       "message": "The crazy EU cookie law says I have to show you this. This website uses cookies - if you don't like that then please leave the site."
     }
   });
-  UserManagement.init(authHook);
+
   UserManagement.handleAuthentication();
 });
 
@@ -29,7 +32,7 @@ document.getElementById("paypal-account").value = PAYPAL_ACCOUNT_STAGE;
 
 var returnURL = window.location.origin + "/#licensing";
 document.getElementById("paypal-return-url").value = returnURL;
-console.log(returnURL);
+// console.log(returnURL);
 
 // set up animated scrolling
 var dsScrollTo = function scrollT(target, btn) {
@@ -77,6 +80,8 @@ var authHook = {
     LicenseMgmt.clearLicenseTable();
   }
 };
+
+UserManagement.init(authHook);
 
 // set up Sign In / Out button depending on login state
 const jwtToken = localStorage.getItem('idToken');
